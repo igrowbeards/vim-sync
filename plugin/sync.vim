@@ -34,7 +34,7 @@ function! SyncUploadFile()
   if !empty(exe)
     let fold = substitute(expand('%:p:h'), exe[0:strridx(exe, '/')], "", "")
     let cmd = printf("%s %s %s %s", exe, 'upload', fold, shellescape(expand('%')))
-    execute '!' . cmd
+    execute '!' . cmd . '&'
   endif
 endfunction
 
